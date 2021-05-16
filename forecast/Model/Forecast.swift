@@ -27,3 +27,10 @@ struct Weather: Codable {
     let description: String
     let icon: String
 }
+
+struct ForecastData {
+    let date: Date
+    let icon: String
+    let weather: String
+    let temperature: Double
+}
