@@ -40,6 +40,8 @@ class ViewController: UIViewController {
         WeatherDataSource.shared.fetch(location: location) {
             self.listTableView.reloadData()
         }
+        
+        LocationManager.shared.updateLocation()
     }
 
 
