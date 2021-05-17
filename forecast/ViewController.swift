@@ -32,6 +32,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        listTableView.backgroundColor = .clear
+        listTableView.separatorStyle = .none
+        listTableView.showsVerticalScrollIndicator = false
+        
         let location = CLLocation(latitude: 37.498206, longitude: 127.02761)
         WeatherDataSource.shared.fetch(location: location) {
             self.listTableView.reloadData()
