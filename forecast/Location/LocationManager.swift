@@ -21,8 +21,20 @@ class LocationManager: NSObject {
     
     let manager: CLLocationManager
     
-    var currentLocationTitle: String?
+    var currentLocationTitle: String? {
+        didSet {
+            var userInfo = [AnyHashable: Any]()
+            if let location = currentLocation {
+                userInfo["location"] = location
+            }
+            
+            NotificationCenter.default.post(name: Self.currentLocationDidUpdate, object: nil, userInfo: userInfo)
+        }
+    }
+    //좌표를 받아서 WeatherAPI로 보낼 정보를 담는 변수
+    var currentLocation: CLLocation?
     
+    static let currentLocationDidUpdate = Notification.Name("currentLocationDidUpdate")
     func updateLocation() {
         let status: CLAuthorizationStatus
         
@@ -109,6 +121,7 @@ extension LocationManager: CLLocationManagerDelegate {
 //        print(locations.last)
         
         if let location = locations.last {
+            currentLocation = location
             updateAddress(from: location)
         }
     }
