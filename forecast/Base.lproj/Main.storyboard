@@ -177,6 +177,10 @@
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="L0h-s1-cuo"/>
                                 </connections>
                             </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="md1-Oc-4rY">
+                                <rect key="frame" x="197" y="438" width="20" height="20"/>
+                                <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -195,11 +199,14 @@
                             <constraint firstItem="45K-g7-P6O" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="ds1-k2-odO"/>
                             <constraint firstItem="2Td-nq-TLS" firstAttribute="top" secondItem="fwp-9e-4Ew" secondAttribute="bottom" id="e4b-ou-8YF"/>
                             <constraint firstItem="LbV-81-k8W" firstAttribute="trailing" secondItem="45K-g7-P6O" secondAttribute="trailing" id="f60-jq-YUI"/>
+                            <constraint firstItem="md1-Oc-4rY" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="hvq-KR-iFG"/>
+                            <constraint firstItem="md1-Oc-4rY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="weB-jd-G86"/>
                             <constraint firstItem="LbV-81-k8W" firstAttribute="leading" secondItem="45K-g7-P6O" secondAttribute="leading" id="z35-yH-SrF"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="listTableView" destination="2Td-nq-TLS" id="g9d-qW-r0K"/>
+                        <outlet property="loader" destination="md1-Oc-4rY" id="pK3-8S-aZo"/>
                         <outlet property="locationLabel" destination="PCl-nG-3RE" id="LNl-yF-wCq"/>
                     </connections>
                 </viewController>
