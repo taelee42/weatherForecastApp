@@ -57,7 +57,6 @@ class LocationManager: NSObject {
     }
 }
 
-
 extension LocationManager: CLLocationManagerDelegate {
     //권한을 요청하는 코드
     //이 메소드가 아래 requestCurrentLocation보다 먼저 호출돼야 한다.
@@ -79,7 +78,6 @@ extension LocationManager: CLLocationManagerDelegate {
                 self?.currentLocationTitle = "Unknown"
                 return
             }
-            
             if let placemark = placemarks?.first {
                 if let gu = placemark.locality, let dong = placemark.subLocality {
                     self?.currentLocationTitle = "\(gu) \(dong)"
@@ -90,7 +88,6 @@ extension LocationManager: CLLocationManagerDelegate {
             
             print(self?.currentLocationTitle)
         }
-        
     }
 
     @available(iOS 14.0, *)
@@ -130,6 +127,4 @@ extension LocationManager: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print(error)
     }
-    
-    
 }
